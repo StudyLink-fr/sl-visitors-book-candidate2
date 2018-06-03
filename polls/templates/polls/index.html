@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+    <title>Golden Book</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="{% url 'polls:index' %}">Golden Book</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'polls:index' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'polls:login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'polls:register' %}">Register</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br/>
+    <div class="jumbotron" id="zone_index_info">
+      <b> Look all notices ! </b><br/><br/>
+      <a class="btn btn-outline-light" href="#notice">Click here</a><br/><br/>
+      <p id="help"><i>Login you to modify or post new notices</i></p>
+    </div>
+    <br/>
+    {% if all_notice %}
+    <a name="notice"/>
+    <ul>
+      {% for notice in all_notice %}
+      <div class="jumbotron" id="zone_look_notice">
+        <p id="title_notice"><b>{{ notice.notice_title }}</b></p>
+        <hr class="my-4">
+        <p id="contains_notice"> {{ notice.notice_text }}</p>
+        <hr class="my-4">
+        <p id="user_notice"><i>Message left by <b>{{ notice.post_pseudo }}</b></i></p>
+      </div>
+      <br/><br/>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </body>
+</html>

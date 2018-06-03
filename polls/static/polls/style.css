@@ -1,0 +1,95 @@
+body {
+    background: url("image/bg1.jpg") no-repeat fixed;
+}
+
+#zone_log {
+    margin-top:10%;
+    margin-left:10%;
+    margin-right:10%;
+    border: 5px solid gray;
+    background-color:#d3d3d3;
+    border-radius:5px;
+}
+
+#zone_notice {
+    margin-top:2%;
+    margin-left:10%;
+    margin-right:10%;
+    border: 5px solid gray;
+    background-color:#d3d3d3;
+    border-radius:5px;
+}
+
+#zone_text {
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+#button_ancre {
+    align:center;
+    position:relative;
+    left:47.5%;
+}
+
+button {
+    position:relative;
+    display:block;
+    left:49.5%;
+    margin-bottom:20px;
+}
+
+#title_notice {
+    font-size:20px;
+}
+
+#contains_notice {
+    font-size:18px;
+    overflow:auto;
+}
+
+#user_notice {
+    font-size:15px;
+}
+
+#separate {
+    background-color:white;
+}
+
+#zone_look_notice {
+    text-align:center;
+    margin-left:20%;
+    margin-right:20%;
+}
+
+@keyframes switch_color {
+    from {background-color:blue;}
+    to {background-color:red;}
+}
+
+#zone_info {
+    font-size:22px;
+    margin-left:30%;
+    margin-right:30%;
+    text-align:center;
+    height:50%;
+    background-color:blue;
+    animation:switch_color 5s linear 3s infinite alternate;
+    color:white;
+}
+
+#zone_index_info {
+    font-size:22px;
+    margin-top:15%;
+    margin-bottom:15%;
+    text-align:center;
+    height:50%;
+    background-color:blue;
+    animation:switch_color 5s linear 3s infinite alternate;
+    color:white;
+}
+
+#help {
+    font-size:16px;
+}

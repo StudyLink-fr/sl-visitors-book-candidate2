@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+    <title>Golden Book</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="{% url 'polls:index_log' pseudo%}">Golden Book</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'polls:index_log' pseudo %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'polls:index' %}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br/>
+    <div id="zone_log">
+      <form action="{% url 'polls:change_now' pseudo notice.id %}" method="post">
+	{% csrf_token %}
+	<div id="zone_text" class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" value="{{ notice.notice_title }}" placeholder="Enter title" name="title">
+	</div>
+	<div id="zone_text" class="form-group">
+          <label>Contents</label>
+          <textarea class="form-control" rows="10" placeholder="Enter contents" name="text">{{ notice.notice_text }}</textarea>
+	</div>
+	<button type="submit" class="btn btn-outline-secondary">Change Notice</button>
+      </form>
+    </div>
+  </body>
+</html>

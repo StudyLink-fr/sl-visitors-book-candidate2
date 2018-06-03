@@ -1,0 +1,16 @@
+Create an admin account
+-----------------------
+
+1. Enter the following command :
+
+   python manage.py createsuperuser
+
+2. Enter your informations
+
+3. Run : python manage.py runserver
+
+4.  Go to this adress http://127.0.0.1:8000/admin/
+
+5. Enter your informations
+
+Now, you have an access to your admin account and you can manage your database.
